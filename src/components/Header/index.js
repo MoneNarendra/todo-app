@@ -15,11 +15,11 @@ class Header extends Component {
   componentDidMount() {
     this.getUserDetails();
   }
+
   onClickLogout = () => {
     const { history } = this.props;
     Cookies.remove("jwt_token");
     history.replace("/authorize");
-    alert("User Deleted Successfully");
   };
 
   onDeleteUser = async () => {
@@ -35,6 +35,7 @@ class Header extends Component {
     };
     await fetch(url, options);
     this.onClickLogout();
+    alert("User Deleted Successfully");
   };
 
   getUserDetails = async () => {
