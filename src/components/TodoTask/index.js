@@ -4,7 +4,6 @@ import { FaRegEdit } from "react-icons/fa";
 import { TiDeleteOutline } from "react-icons/ti";
 
 import "./index.css";
-import { type } from "os";
 
 class TodoTask extends Component {
   state = { editClicked: false, userEditedValue: "" };
@@ -31,7 +30,7 @@ class TodoTask extends Component {
     this.setState({ userEditedValue: event.target.value });
   };
 
-  enterChangeTodo = () => {
+  enterChangeTodo = (event) => {
     const { userEditedValue } = this.state;
     const { eachTodo, changeEditedTodo } = this.props;
     if (event.key === "Enter") {

@@ -76,11 +76,7 @@ class Header extends Component {
               {(close) => (
                 <div className="user-details-container">
                   <div className="close-btn-container">
-                    <button
-                      className="close"
-                      onClick={close}
-                      className="close-btn"
-                    >
+                    <button className="close close-btn" onClick={close}>
                       &times;
                     </button>
                   </div>

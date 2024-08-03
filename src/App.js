@@ -1,4 +1,4 @@
-import { Switch, Route, Navigate } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 // import Cookies from "js-cookie";
 
