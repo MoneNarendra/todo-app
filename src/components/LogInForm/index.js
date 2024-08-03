@@ -56,7 +56,9 @@ class LogInForm extends Component {
     }
   };
 
-  handleSubmit = async (event) => {
+  handleSubmit = (event) => {
+    const { preventChanges } = this.props;
+    preventChanges(event);
     event.preventDefault();
     this.loginUser();
   };

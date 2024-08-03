@@ -65,6 +65,8 @@ class SignInForm extends Component {
   };
 
   handleSubmit = (event) => {
+    const { preventChanges } = this.props;
+    preventChanges(event);
     event.preventDefault();
     const { name, username, password, gender } = this.state;
     if (name === "") {

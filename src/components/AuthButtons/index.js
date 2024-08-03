@@ -11,6 +11,10 @@ import "./index.css";
 class AuthButtons extends Component {
   state = { showSignIn: false };
 
+  preventChanges = (event) => {
+    event.preventDefault();
+  };
+
   onClickSignIn = () => {
     this.setState({ showSignIn: true });
   };
@@ -47,7 +51,11 @@ class AuthButtons extends Component {
           </button>
         </div>
 
-        {showSignIn ? <SignInForm /> : <LogInForm />}
+        {showSignIn ? (
+          <SignInForm preventChanges={this.preventChanges} />
+        ) : (
+          <LogInForm preventChanges={this.preventChanges} />
+        )}
       </div>
     );
   }
