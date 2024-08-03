@@ -1,4 +1,4 @@
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 // import Cookies from "js-cookie";
 
@@ -13,6 +13,7 @@ function App() {
     <Switch>
       <Route path="/authorize" component={(props) => <AuthButtons />} />
       <ProtectedRoute exact path="/" component={(props) => <Home />} />
+      <Redirect to="/" />
     </Switch>
   );
 }
