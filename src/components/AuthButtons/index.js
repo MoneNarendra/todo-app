@@ -19,6 +19,10 @@ class AuthButtons extends Component {
     this.setState({ showSignIn: false });
   };
 
+  componentDidMount() {
+    this.setState({ showSignIn: false });
+  }
+
   render() {
     const { showSignIn } = this.state;
     const activeSignInClass = showSignIn ? "active-btn" : "";
