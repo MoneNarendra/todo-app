@@ -19,10 +19,6 @@ class AuthButtons extends Component {
     this.setState({ showSignIn: false });
   };
 
-  componentDidMount() {
-    this.setState({ showSignIn: false });
-  }
-
   render() {
     const { showSignIn } = this.state;
     const activeSignInClass = showSignIn ? "active-btn" : "";
@@ -30,11 +26,9 @@ class AuthButtons extends Component {
 
     const jwtToken = Cookies.get("jwt_token");
 
-    if (jwtToken !== undefined) {
-      return <Redirect to="/" />;
-    }
-
-    return (
+    return jwtToken !== undefined ? (
+      <Redirect to="/" />
+    ) : (
       <div className="auth-buttons-container">
         <div className="top-container">
           <button
