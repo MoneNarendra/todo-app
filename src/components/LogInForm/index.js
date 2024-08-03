@@ -32,8 +32,7 @@ class LogInForm extends Component {
     this.setState({ showSubmitError: true, errorMsg });
   };
 
-  handleSubmit = async (event) => {
-    event.preventDefault();
+  loginUser = async () => {
     const { username, password } = this.state;
     const userDetails = { username, password };
 
@@ -55,6 +54,11 @@ class LogInForm extends Component {
     } else {
       this.onSubmitFailure(data.error_msg);
     }
+  };
+
+  handleSubmit = async (event) => {
+    event.preventDefault();
+    this.loginUser();
   };
 
   onChangePasswordStatus = () => {
