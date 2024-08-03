@@ -11,7 +11,7 @@ import "./App.css";
 function App() {
   return (
     <Switch>
-      <Route path="/authorize" component={(props) => <AuthButtons />} />
+      <Route exact path="/authorize" component={(props) => <AuthButtons />} />
       <ProtectedRoute exact path="/" component={(props) => <Home />} />
       <Redirect to="/" />
     </Switch>
